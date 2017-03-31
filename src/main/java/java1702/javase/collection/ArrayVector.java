@@ -40,11 +40,35 @@ public class ArrayVector { //使用数组来模拟一个向量 DynamicArray
     }
 
     public int size() {
+
         return size;
     }
 
     public int capacity() {
+
         return capacity;
+    }
+
+    public String remove(int index) {
+        if (index >= size) {
+            System.out.println("error.");
+            System.exit(0);
+        }
+        String s = strings[index];
+        System.arraycopy(strings, index + 1, strings, index, size - index - 1);
+        strings[size - 1] = null;
+        size--;
+        return s;
+    }
+
+    public String set(int index, String element) {
+        if (index >= size) {
+            System.out.println("error.");
+            System.exit(0);
+        }
+        String s = strings[index];
+        strings[index] = element;
+        return s;
     }
 
     public static void main(String[] args) {
@@ -55,7 +79,6 @@ public class ArrayVector { //使用数组来模拟一个向量 DynamicArray
         arrayVector.add("hi");
         System.out.println(arrayVector.size());
         System.out.println(arrayVector.capacity());
-        System.out.println("--");
 
     }
 
