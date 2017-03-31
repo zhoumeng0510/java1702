@@ -5,7 +5,7 @@ package java1702.javase.collection;
  * 2017/3/31.
  * 9:40.
  */
-public class ArrayVector { //// 使用数组来模拟一个向量 DynamicArray
+public class ArrayVector { //使用数组来模拟一个向量 DynamicArray
     private static final int DEFAULT_CAPACITY = 10;
     private String[] strings;
     private int capacity;
